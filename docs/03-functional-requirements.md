@@ -68,3 +68,60 @@ Clear dependent lot decisions and placements when their source results/groups ar
 
 ## FR-13 — Future boundaries
 History-ready design, but no historical UI or retention on reset. English-only with later German possible. Future optional times and scheduling must not define match identity or scoring; schedule edits and result locks must remain separate concepts. No timetable or automated scheduling in MVP.
+
+## UI/UX design foundation
+
+WP-02A establishes a documentation-first UI/UX design foundation for the MVP. It defines reusable design tokens, component and interaction patterns, low-fidelity screen specifications, accessibility implementation rules, and a screen inventory for WP-04 through WP-11.
+
+### Design tokens
+
+Define named, reusable decisions for:
+
+- Color roles: action, success, warning, error, surface, border, text, and focus.
+- Typography scale.
+- Spacing scale.
+- Border radius.
+- Focus-visible styling.
+- Status indication that does not rely on color alone.
+
+### Component and interaction patterns
+
+Establish lightweight patterns for:
+
+- Buttons, destructive-action confirmation, forms, labels, helper text, validation, and error messages.
+- Cards, lists, tables, badges, empty states, loading states, and error states.
+- Organizer page shell and navigation.
+- Public page shell and navigation.
+- Score entry: set-score inputs, validation, saving state, failed-save recovery, correction, and confirmation.
+- Public match, standings, bracket, placement, refresh, pause, stale-data, and manual-refresh patterns.
+
+### Screen specifications
+
+Provide low-fidelity wireframes or structured specifications for:
+
+- Tournament setup: teams, groups, and courts.
+- Court assignment and public upcoming games.
+- Group results and standings.
+- Tie resolution and stage transitions.
+- Knockout bracket and progression.
+- Third place, forfeits, and placements.
+- Public home, groups, matches, standings, bracket, and placements.
+
+### Accessibility implementation rules
+
+Establish implementation rules for:
+
+- Mobile-first layout at a 320 CSS-pixel viewport width.
+- Usable layout at 200% text zoom.
+- Minimum touch-target guidance.
+- Contrast expectations.
+- Clear labels and meaningful table headers.
+- Text explanations for errors.
+- Focus behavior and preservation of scroll/view state during updates.
+- Clear cancel/confirm choices for destructive actions.
+
+### Application boundaries
+
+WP-02A establishes patterns only. It does not add features, implement UI, select infrastructure, or claim WCAG conformance. WP-04 through WP-11 apply these patterns during implementation; WP-12 verifies the final implementation.
+
+These patterns do not alter FR-01 through FR-13, including scoring, tie-breakers, qualification, stage locks, forfeits, placements, resets, or authorization rules.

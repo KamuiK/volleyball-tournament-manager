@@ -5,6 +5,8 @@ Status: Approved MVP baseline | 2026-11-05
 ## NFR-01 — Mobile-first behavior
 Core public and organizer tasks work at 320 CSS-pixel viewport width with no clipped controls or overlapping text. Wide standings/brackets may use a clearly contained horizontal-scroll region. Preserve usability at 200% text zoom. Use English for all interface, validation, confirmation, and accessibility text.
 
+WP-02A establishes the mobile-first layout, spacing, typography, focus, and responsive-interaction rules. WP-04 through WP-11 apply those rules during implementation. WP-12 verifies the final implementation.
+
 ## NFR-02 — Practical accessibility baseline
 - Primary buttons and score-entry controls target at least 44×44 CSS pixels.
 - Other controls meet a 24×24 CSS-pixel target or appropriate spacing exceptions.
@@ -14,6 +16,8 @@ Core public and organizer tasks work at 320 CSS-pixel viewport width with no cli
 - Clear cancel/confirm choices for destructive actions.
 - Provide automatic-update pause and manual refresh.
 Dedicated keyboard navigation and screen-reader/VoiceOver test passes are excluded. Basic accessible implementation remains expected. Do not claim verified WCAG 2.2 AA conformance.
+
+WP-02A establishes the practical accessibility implementation rules, including labels, table headers, error text, focus behavior, touch-target guidance, contrast expectations, and destructive-action confirmation patterns. WP-04 through WP-11 apply those rules during implementation. WP-12 verifies the final implementation.
 
 ## NFR-03 — Performance acceptance targets
 Under a repeatable mobile device/network profile agreed during Phase 2 and representative 12-team data:

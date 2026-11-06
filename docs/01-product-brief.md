@@ -20,6 +20,9 @@ Provide a mobile-first web application for operating one current amateur mixed-v
 - Court assignment is manual. Timed scheduling is excluded.
 - Rules source: Mixed_Volleyball_Regelblaetter_ueberarbeitet.pdf, supplemented by approved workshop decisions below and in the functional requirements.
 
+## UI/UX design foundation
+The MVP includes a lightweight, documentation-first UI/UX design foundation to keep organizer and public experiences consistent, mobile-friendly, and accessible. It defines shared design tokens, interaction patterns, screen specifications, and accessibility implementation rules; it does not add product features or implement UI.
+
 ## Success criteria
 - The organizer can prepare teams, groups, and courts, then explicitly start play.
 - Court and team assignment conflicts cannot be saved.

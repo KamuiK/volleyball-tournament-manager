@@ -8,6 +8,12 @@ Status: Approved MVP baseline | 2026-11-05
 
 ## Must-have user stories
 
+## Shared UI/UX patterns
+
+Organizer and public workflows use the shared UI/UX patterns established by WP-02A. Forms use clear labels, helper text, validation messages, saving states, and text-based error explanations. Empty, loading, error, destructive-confirmation, and status states follow the same patterns across organizer and public views.
+
+These patterns do not change any tournament, scoring, authorization, stage-lock, reset, or public-access requirement.
+
 ### US-01 — Prepare teams and groups
 As an organizer, I want to enter team names and assign teams to two groups, so that the tournament has valid participants and pairings.
 Acceptance criteria:
@@ -32,6 +38,7 @@ Acceptance criteria:
 - Explain conflicts; allow moving or removing an assignment.
 - Result/forfeit saves and assignment removal release resources.
 - Apply assignment to open knockout rounds with known participants.
+- Assignment conflicts, removal, and movement use the established form, error, confirmation, and status patterns.
 
 ### US-04 — View upcoming games
 As a player, I want to see assigned upcoming games and court names, so that I know where my team should play.
@@ -49,6 +56,7 @@ Acceptance criteria:
 - Allow corrections only in an open stage.
 - Reject invalid changes without overwriting saved data.
 - No approval step or change history.
+- Score entry uses the established set-score input, validation, saving, failed-save recovery, correction, and confirmation patterns.
 
 ### US-06 — Review standings and resolve ties
 As an organizer, I want correctly ranked groups and recorded lot outcomes, so that qualification is settled before knockout play.
@@ -90,6 +98,7 @@ Acceptance criteria:
 - Approximately 30-second visible-page checks and a check on return.
 - Manual refresh, pause control, last successful check, and stale-data warning.
 - Preserve view, filters, and scroll position during updates.
+- Public refresh, pause, stale-data, loading, empty, and error states use the established shared patterns.
 
 ### US-11 — Reset an attempt
 As an organizer, I want granular resets and a full reset, so that I can discard testing or restart an abandoned event.
@@ -98,6 +107,7 @@ Acceptance criteria:
 - Follow dependency clearing rules in the functional requirements.
 - Explicitly confirm destructive consequences; no undo or archival requirement.
 - Permit reset at any stage, including after finalization.
+- Reset actions use the established destructive-action confirmation pattern.
 
 ## Other priorities
 - Should have: none committed outside the Must-have baseline.

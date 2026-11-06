@@ -14,25 +14,26 @@
 
 Four milestone sprints, initially tracked in one-week windows. Dates are planning targets, not delivery commitments. Carry unfinished work forward without skipping dependencies or approval gates.
 
-The earlier estimate of 25–40 hours was inconsistent with the package breakdown. Use 50–80 focused hours as the provisional sprint-level estimate, including review, testing, fixes, and deployment. At 8–12 hours per week, allow approximately 5–10 weeks rather than assuming all work fits into four weeks. Actual velocity will be reviewed after Sprint 1; no scope or approval changes are implied.
+The earlier estimate of 25–40 hours was inconsistent with the package breakdown. Use 52–83 focused hours as the provisional sprint-level estimate, including review, testing, fixes, and deployment. At 8–12 hours per week, allow approximately 5–10 weeks rather than assuming all work fits into four weeks. Actual velocity will be reviewed after Sprint 1; no scope or approval changes are implied.
 
 ## Sprint overview
 
 | Sprint | Initial target dates | Packages | Estimated effort | Milestone |
 |---|---|---|---|---|
-| 1 — Foundation and setup | 6–12 November 2026 | WP-01–WP-04 | 11–18 hours | Authenticated tournament setup foundation |
+| 1 — Foundation and setup | 6–12 November 2026 | WP-01–WP-04, including WP-02A | 13–21 hours | Authenticated tournament setup foundation |
 | 2 — Group play and courts | 13–19 November 2026 | WP-05–WP-07 | 13–20 hours | Group pairings, assignments, results, standings |
 | 3 — Knockouts and public experience | 20–26 November 2026 | WP-08–WP-11 | 18–28 hours | Full tournament flow and public views |
 | 4 — Hardening and launch | 27 November–3 December 2026 | WP-12 and fixes/rehearsal | 8–14 hours | Production readiness |
-| Total | Dates subject to actual velocity | WP-01–WP-12 | 50–80 hours | Tournament-ready MVP |
+| Total | Dates subject to actual velocity | WP-01–WP-12, including WP-02A | 52–83 hours | Tournament-ready MVP |
 
 Sprint 3 is the highest-load milestone and may need more than one calendar week. Reserve contingency before the tournament; no tournament date has been supplied.
 
 ## Sprint 1 — Foundation and tournament setup
 
-Goal: Establish the repository, data foundation, organizer authorization, and tournament setup workflow.
+Goal: Establish the repository, data foundation, organizer authorization, shared UI/UX design foundation, and tournament setup workflow.
 
 - WP-01: Repository, tooling, and environment setup.
+- WP-02A: UI/UX design foundation.
 - WP-02: Database schema and migrations.
 - WP-03: Organizer authentication and authorization.
 - WP-04: Tournament setup: teams, groups, and courts.
@@ -42,6 +43,9 @@ Goal: Establish the repository, data foundation, organizer authorization, and to
 - Local project, linting, test tooling, and environment conventions work.
 - Database migrations can be applied and verified.
 - Organizer authentication works and mutations enforce server-side authorization.
+- WP-02A design tokens, component patterns, screen specifications, accessibility implementation rules, and screen inventory are documented.
+- WP-04 and later UI-heavy packages can consume the established patterns.
+- No UI implementation, product-feature change, or infrastructure selection occurs as part of WP-02A.
 - Organizer can manage team names, group assignments, and named courts.
 - Unused courts can be deleted; courts with active assignments cannot be deleted.
 - Organizer can explicitly start the group stage.
@@ -119,17 +123,27 @@ Demo: “The app is deployed and ready for tournament day.”
 | ID | Package | Complexity | Dependencies | Status |
 |---|---|---|---|---|
 | WP-01 | Repository, tooling, and environment setup | S | None | Approved; not started |
+| WP-02A | UI/UX design foundation | S | WP-01 | Not started; approval required |
 | WP-02 | Database schema and migrations | M | WP-01 | Not started; approval required |
 | WP-03 | Organizer authentication and authorization | M | WP-02 | Not started; approval required |
-| WP-04 | Tournament setup: teams, groups, and courts | M | WP-03 | Not started; approval required |
-| WP-05 | Group pairings and stable round-robin order | M | WP-04 | Not started; approval required |
-| WP-06 | Court assignment and public upcoming games | M | WP-05 | Not started; approval required |
-| WP-07 | Group results, validation, and standings | L | WP-06 | Not started; approval required |
-| WP-08 | Tie resolution, stage transitions, and locking | L | WP-07 | Not started; approval required |
-| WP-09 | Knockout bracket, results, and progression | L | WP-08 | Not started; approval required |
-| WP-10 | Third place, forfeits, and placements | M | WP-09 | Not started; approval required |
-| WP-11 | Public pages and automatic updates | M | WP-06; full value after WP-10 | Not started; approval required |
+| WP-04 | Tournament setup: teams, groups, and courts | M | WP-02A, WP-03 | Not started; approval required |
+| WP-05 | Group pairings and stable round-robin order | M | WP-04; uses WP-02A patterns | Not started; approval required |
+| WP-06 | Court assignment and public upcoming games | M | WP-05; uses WP-02A patterns | Not started; approval required |
+| WP-07 | Group results, validation, and standings | L | WP-06; uses WP-02A patterns | Not started; approval required |
+| WP-08 | Tie resolution, stage transitions, and locking | L | WP-07; uses WP-02A patterns | Not started; approval required |
+| WP-09 | Knockout bracket, results, and progression | L | WP-08; uses WP-02A patterns | Not started; approval required |
+| WP-10 | Third place, forfeits, and placements | M | WP-09; uses WP-02A patterns | Not started; approval required |
+| WP-11 | Public pages and automatic updates | M | WP-06; full value after WP-10; uses WP-02A patterns | Not started; approval required |
 | WP-12 | Resets, quality checks, and deployment | M | WP-10, WP-11 | Not started; approval required |
+
+### WP-02A definition of done
+
+- `docs/11-ui-ux-design-foundation.md` defines design tokens, component and interaction patterns, screen specifications, accessibility implementation rules, and the screen inventory.
+- Every required screen area is mapped to WP-04 through WP-11.
+- Existing tournament, scoring, tie-breaker, stage-lock, forfeit, placement, reset, and authorization rules remain unchanged.
+- No application code, styles, components, database migrations, or tests are created.
+- The document explicitly does not claim WCAG conformance or select infrastructure.
+- WP-12 remains the final quality, accessibility, and deployment verification package.
 
 ## Rehearsal checklist
 

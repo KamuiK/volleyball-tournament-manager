@@ -32,6 +32,7 @@ The application is English-only at launch. Public pages are read-only. Organizer
 | Phase 2 architecture | Approved |
 | Phase 3 work-package planning | Approved |
 | WP-01 repository and local foundation | Complete |
+| WP-02A UI/UX design foundation | Not started; approval required |
 | WP-02 database schema and migrations | Not started; approval required |
 | WP-03 organizer authentication | Not started; approval required |
 | WP-04 tournament setup | Not started; approval required |
@@ -96,9 +97,11 @@ The `esbuild` and `fsevents` install scripts were explicitly approved for this p
 
 ## Next work package
 
-WP-02 — Database schema and migrations is the next approved-candidate package, but it requires explicit approval before implementation.
+WP-02A — UI/UX design foundation is the next approved-candidate package, but it requires explicit approval before implementation.
 
-It will introduce the Neon PostgreSQL connection, Drizzle ORM, initial schema, migration tooling, and database-related environment conventions. It must not implement tournament features beyond the approved data foundation.
+It is a documentation-only package that establishes design tokens, component and interaction patterns, screen specifications, accessibility implementation rules, and a screen inventory for WP-04 through WP-11. It must not implement UI, add features, select infrastructure, or claim WCAG conformance.
+
+WP-02 — Database schema and migrations follows WP-02A in the approved sequence and also requires explicit approval before implementation. It will introduce the Neon PostgreSQL connection, Drizzle ORM, initial schema, migration tooling, and database-related environment conventions. It must not implement tournament features beyond the approved data foundation.
 
 ## Repository links
 
@@ -109,3 +112,4 @@ It will introduce the Neon PostgreSQL connection, Drizzle ORM, initial schema, m
 - Non-functional requirements: docs/04-non-functional-requirements.md
 - Open questions and decisions: docs/05-open-questions.md
 - Sprint plan: docs/10-sprint-plan.md
+- UI/UX design foundation: docs/11-ui-ux-design-foundation.md
