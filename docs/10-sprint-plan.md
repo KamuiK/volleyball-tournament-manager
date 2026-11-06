@@ -7,6 +7,7 @@
 - Sprint 1 starts on Friday 6 November 2026.
 - WP-01 is complete.
 - WP-02A is complete as of 6 November 2026.
+- WP-02 is complete as of 6 November 2026.
 - Each subsequent work package requires explicit approval before implementation.
 - Stay on the Free plan for now; reassess only if usage limits interfere.
 - Every handover prompt must begin with a descriptive project, phase, topic, or work-package header.
@@ -78,7 +79,7 @@ Demo: “I can run group matches and see updated standings.”
 
 ## Sprint 3 — Knockouts, placements, and public experience
 
-Goal: Complete tournament progression and the spectator experience.
+Goal: Complete tournament progression and public experience.
 
 - WP-08: Tie resolution, stage transitions, and locking.
 - WP-09: Knockout bracket, results, and progression.
@@ -111,7 +112,7 @@ Goal: Verify tournament-day readiness and deploy production.
 - All four reset types work with authorization and destructive confirmation.
 - Critical E2E flows and business-rule tests pass.
 - Mobile usability, 200% text zoom, labels, contrast, and touch targets are checked.
-- No verified WCAG-conformance claim is made.
+- No verified WCAG conformance claim is made.
 - Agreed performance conditions are tested.
 - Save failures preserve input and do not report false success or permit repeated submissions.
 - Production URL, HTTPS, organizer login, and persistence across ordinary restarts are verified.
@@ -125,7 +126,7 @@ Demo: “The app is deployed and ready for tournament day.”
 |---|---|---|---|---|
 | WP-01 | Repository, tooling, and environment setup | S | None | Complete |
 | WP-02A | UI/UX design foundation | S | WP-01 | Complete; 6 November 2026 |
-| WP-02 | Database schema and migrations | M | WP-01 | Not started; approval required |
+| WP-02 | Database schema and migrations | M | WP-01 | Complete; 6 November 2026 |
 | WP-03 | Organizer authentication and authorization | M | WP-02 | Not started; approval required |
 | WP-04 | Tournament setup: teams, groups, and courts | M | WP-02A, WP-03 | Not started; approval required |
 | WP-05 | Group pairings and stable round-robin order | M | WP-04; uses WP-02A patterns | Not started; approval required |
@@ -147,6 +148,22 @@ Demo: “The app is deployed and ready for tournament day.”
 - The document explicitly does not claim WCAG conformance or select infrastructure.
 - WP-12 remains the final quality, accessibility, and deployment verification package.
 
+### WP-02 completion record
+
+Completed on 6 November 2026.
+
+- Added Drizzle ORM, Drizzle Kit, and `@neondatabase/serverless`.
+- Added `db:generate`, `db:migrate`, and `db:studio` npm scripts.
+- Created the typed Drizzle schema, Neon database client, migration configuration, and initial migration chain.
+- Created the tournament, team, group, court, match, set-score, court-assignment, lot-decision, and placement tables.
+- Enforced one current tournament, case-insensitive team and court names, one group per team, distinct match participants, unique set numbers, one assignment per match, and one active assignment per court.
+- Applied all migrations to the approved Neon development database only; a repeated `npm run db:migrate` succeeded.
+- Database integration tests verified direct court-deletion protection, match-deletion cascade behavior, and tournament-deletion cascade behavior.
+- `npm run lint`, `npm run typecheck`, `npm test`, and `npm run build` passed.
+- The court-assignment foreign key uses `ON DELETE NO ACTION` and is `DEFERRABLE INITIALLY DEFERRED`. Preserve this behavior in future migrations so tournament-wide deletion can cascade while direct deletion of a referenced court remains blocked.
+- One active assignment per team remains application-level validation for a later work package; it is intentionally not enforced as a database constraint.
+- No UI, authentication, business rules, scoring calculations, standings, bracket progression, resets, or public-update behavior were implemented.
+
 ## Rehearsal checklist
 
 - [ ] Create 12 teams, groups, and courts.
@@ -165,4 +182,4 @@ After each package, record completion date, actual effort, tests/manual verifica
 
 ## Next action
 
-WP-02A is complete. The next approved-candidate packages are WP-02 — Database schema and migrations and WP-03 — Organizer authentication and authorization. Both require explicit approval before implementation.
+WP-02 is complete. The next approved-candidate package is WP-03 — Organizer authentication and authorization. It requires explicit approval before planning or implementation.
