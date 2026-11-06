@@ -92,8 +92,8 @@ Goal: Complete tournament progression and the spectator experience.
 - Phase-specific score validation, administrative forfeits, and placements are correct.
 - Disabling third place uses the approved signed semifinal point-difference comparison.
 - Public groups, matches, results, standings, bracket, and placements work on mobile.
-- Public updates check about every 30 seconds while visible and on return.
-- Manual refresh, pause, last successful check, stale-data indication, and stable view state work.
+- Public updates check about every 5 minutes while visible and on return, with no user pause control.
+- Manual refresh, last successful check, stale-data indication, and stable view state work.
 
 Demo: “I can complete the tournament and spectators can follow it.”
 
@@ -154,7 +154,7 @@ Demo: “The app is deployed and ready for tournament day.”
 - [ ] Resolve qualification ties, including lot entry.
 - [ ] Progress through all knockout rounds and verify stage locks.
 - [ ] Test both third-place paths, including equal semifinal differences.
-- [ ] Verify public updates, pause/manual refresh, and stale-data behavior on a real phone.
+- [ ] Verify automatic public updates, manual refresh, and stale-data behavior on a real phone.
 - [ ] Test all reset flows in a non-production environment.
 - [ ] Confirm production HTTPS, authorization, and data persistence.
 

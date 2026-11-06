@@ -16,7 +16,7 @@ The interface uses a minimal, clean, content-first visual direction with a token
 - Clear labels, meaningful standard controls/table headers, text explanations of errors; not color alone.
 - Preserve view/scroll and do not deliberately steal focus during updates.
 - Clear cancel/confirm choices for destructive actions.
-- Provide automatic-update pause and manual refresh.
+- Provide manual refresh and a visible last-successful-check time; automatic updates remain enabled while the page is visible.
 Dedicated keyboard navigation and screen-reader/VoiceOver test passes are excluded. Basic accessible implementation remains expected. Do not claim verified WCAG 2.2 AA conformance.
 
 WP-02A establishes the practical accessibility implementation rules, including labels, table headers, error text, focus behavior, touch-target guidance, contrast expectations, and destructive-action confirmation patterns. WP-04 through WP-11 apply those rules during implementation. WP-12 verifies the final implementation.
@@ -26,7 +26,7 @@ Under a repeatable mobile device/network profile agreed during Phase 2 and repre
 - Main public tournament content visible within 3 seconds.
 - Valid save/correction normally completes within 2 seconds.
 - Show progress while saving; prevent accidental repeated submission.
-- Visible public pages check approximately every 30 seconds and on return.
+- Visible public pages automatically check approximately every 5 minutes and on return; visitors cannot pause updates. Suspend periodic checks in the background.
 These are project test targets, not guarantees under all network conditions. Agree load scenario/test method in Phase 2; no paid monitoring implied.
 
 ## NFR-04 — Reliability and data integrity

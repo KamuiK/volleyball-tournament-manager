@@ -45,7 +45,7 @@ One-team forfeit in third-place match awards opponent third. If neither can play
 Award 2–0 with 21–0, 21–0; public label Forfeit. Count administrative scores in table totals and semifinal placement comparison. Forfeit applies to one match only. Individual forfeits cover withdrawals, preserving earlier results. No bulk action or dedicated interrupted-match logic. Other exceptional double absences are organizer-resolved outside the app. Do not invent artificial winners automatically.
 
 ## FR-10 — Public pages and updating
-Public current-tournament groups, match lists, assigned upcoming games, set results, standings, bracket, and determined placements. No login. Check approximately every 30 seconds when visible and on return; pause in background. Provide Refresh, Pause automatic updates, last successful check time. Preserve filters, current view, scroll, and focus during updates. Retain data on connection failure with outdated-data notice. Finalized data remains public; stop periodic checks once final state received.
+Public current-tournament groups, match lists, assigned upcoming games, set results, standings, bracket, and determined placements. No login. Automatic updates are always enabled while the page is visible, checking approximately every 5 minutes and on return; suspend periodic checks in the background. Do not provide a user pause control. Provide manual Refresh, last successful check time, and stale-data notice. Preserve filters, current view, scroll, and focus during updates. Retain data on connection failure with outdated-data notice. Finalized data remains public; stop periodic checks once final state is received.
 
 ## FR-11 — Resets
 All require authorized access and explicit destructive confirmation, at any stage. No archive or undo.
@@ -138,7 +138,7 @@ Establish lightweight patterns for:
 - Organizer page shell and navigation.
 - Public page shell and navigation.
 - Score entry: set-score inputs, validation, saving state, failed-save recovery, correction, and confirmation.
-- Public match, standings, bracket, placement, refresh, pause, stale-data, and manual-refresh patterns.
+- Public match, standings, bracket, placement, refresh, stale-data, and manual-refresh patterns.
 
 ### Screen specifications
 

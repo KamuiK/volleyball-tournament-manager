@@ -95,10 +95,10 @@ Acceptance criteria:
 As a spectator, I want public standings, results, and bracket updates, so that I can follow the current tournament.
 Acceptance criteria:
 - Public access without login, including after finalization.
-- Approximately 30-second visible-page checks and a check on return.
-- Manual refresh, pause control, last successful check, and stale-data warning.
+- Approximately 5-minute visible-page checks and a check on return; updates stay enabled while the page is visible.
+- Manual refresh, last successful check, and stale-data warning; no pause control.
 - Preserve view, filters, and scroll position during updates.
-- Public refresh, pause, stale-data, loading, empty, and error states use the established shared patterns.
+- Public refresh, stale-data, loading, empty, and error states use the established shared patterns.
 
 ### US-11 — Reset an attempt
 As an organizer, I want granular resets and a full reset, so that I can discard testing or restart an abandoned event.

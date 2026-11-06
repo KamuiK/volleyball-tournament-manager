@@ -17,7 +17,7 @@ All decisions below were agreed on 2026-11-05.
 | D-07 | Dependency edits versus stage locks | Explicit stage confirmations; locked prior results; no reopening |
 | D-08 | Required/optional third-place match | Optional, changeable until finalization |
 | D-09 | No match / fallback placement | Semifinal signed point difference; equal means joint third |
-| D-10 | Manual versus automatic public refresh | ~30-second visible checks, return check, refresh/pause, stale indication |
+| D-10 | Manual versus automatic public refresh | Always-enabled ~5-minute visible checks, return check, manual refresh, last successful check, stale indication; no user pause control |
 | D-11 | English/German/bilingual | English-only, German-ready |
 | D-12 | Local-only/public access | Public before event; existing Cloudflare domain; HTTPS |
 | D-13 | Rosters versus team-level details | Team names only |
