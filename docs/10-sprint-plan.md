@@ -1,0 +1,152 @@
+# Volleyball Tournament Manager — Sprint Milestone Plan
+
+## Status
+
+- Sprint plan approved on 6 November 2026.
+- Phase 3 implementation planning is complete; work-package breakdown approved.
+- Sprint 1 starts on Friday 6 November 2026.
+- WP-01 is approved but implementation has not started.
+- Each subsequent work package requires explicit approval before implementation.
+- Stay on the Free plan for now; reassess only if usage limits interfere.
+- Every handover prompt must begin with a descriptive project, phase, topic, or work-package header.
+
+## Planning assumptions
+
+Four milestone sprints, initially tracked in one-week windows. Dates are planning targets, not delivery commitments. Carry unfinished work forward without skipping dependencies or approval gates.
+
+The earlier estimate of 25–40 hours was inconsistent with the package breakdown. Use 50–80 focused hours as the provisional sprint-level estimate, including review, testing, fixes, and deployment. At 8–12 hours per week, allow approximately 5–10 weeks rather than assuming all work fits into four weeks. Actual velocity will be reviewed after Sprint 1; no scope or approval changes are implied.
+
+## Sprint overview
+
+| Sprint | Initial target dates | Packages | Estimated effort | Milestone |
+|---|---|---|---|---|
+| 1 — Foundation and setup | 6–12 November 2026 | WP-01–WP-04 | 11–18 hours | Authenticated tournament setup foundation |
+| 2 — Group play and courts | 13–19 November 2026 | WP-05–WP-07 | 13–20 hours | Group pairings, assignments, results, standings |
+| 3 — Knockouts and public experience | 20–26 November 2026 | WP-08–WP-11 | 18–28 hours | Full tournament flow and public views |
+| 4 — Hardening and launch | 27 November–3 December 2026 | WP-12 and fixes/rehearsal | 8–14 hours | Production readiness |
+| Total | Dates subject to actual velocity | WP-01–WP-12 | 50–80 hours | Tournament-ready MVP |
+
+Sprint 3 is the highest-load milestone and may need more than one calendar week. Reserve contingency before the tournament; no tournament date has been supplied.
+
+## Sprint 1 — Foundation and tournament setup
+
+Goal: Establish the repository, data foundation, organizer authorization, and tournament setup workflow.
+
+- WP-01: Repository, tooling, and environment setup.
+- WP-02: Database schema and migrations.
+- WP-03: Organizer authentication and authorization.
+- WP-04: Tournament setup: teams, groups, and courts.
+
+### Milestone acceptance
+
+- Local project, linting, test tooling, and environment conventions work.
+- Database migrations can be applied and verified.
+- Organizer authentication works and mutations enforce server-side authorization.
+- Organizer can manage team names, group assignments, and named courts.
+- Unused courts can be deleted; courts with active assignments cannot be deleted.
+- Organizer can explicitly start the group stage.
+- Relevant tests and manual checks pass; no secrets or private data are committed.
+
+Demo: “I can set up the tournament and protect organizer actions.”
+
+An early Vercel preview is useful if covered by an approved package. Production domain/HTTPS launch remains part of WP-12; do not expand WP-01–WP-04 to include later-package functionality.
+
+## Sprint 2 — Group play and court operations
+
+Goal: Make the group stage operational.
+
+- WP-05: Group pairings and stable round-robin order.
+- WP-06: Court assignment and public upcoming games.
+- WP-07: Group results, validation, and standings.
+
+### Milestone acceptance
+
+- Correct round-robin pairings are displayed in stable order, interleaving Groups A and B.
+- Organizer can manually assign, move, and remove court assignments.
+- One assigned uncompleted match per team and per court is enforced on the server.
+- Public upcoming games show assigned uncompleted matches, not verified live status.
+- Valid two-set group scores can be entered and corrected.
+- Results publish immediately and standings recalculate correctly.
+- Qualification ties requiring lot entry and stage transitions remain WP-08 work.
+
+Demo: “I can run group matches and see updated standings.”
+
+## Sprint 3 — Knockouts, placements, and public experience
+
+Goal: Complete tournament progression and the spectator experience.
+
+- WP-08: Tie resolution, stage transitions, and locking.
+- WP-09: Knockout bracket, results, and progression.
+- WP-10: Third place, forfeits, and placements.
+- WP-11: Public pages and automatic updates.
+
+### Milestone acceptance
+
+- Qualification ties can be resolved, including externally drawn lot outcomes.
+- Explicit stage transitions enforce completion checks and lock previous stages.
+- Quarterfinals, semifinals, final, and optional third-place match work correctly.
+- Phase-specific score validation, administrative forfeits, and placements are correct.
+- Disabling third place uses the approved signed semifinal point-difference comparison.
+- Public groups, matches, results, standings, bracket, and placements work on mobile.
+- Public updates check about every 30 seconds while visible and on return.
+- Manual refresh, pause, last successful check, stale-data indication, and stable view state work.
+
+Demo: “I can complete the tournament and spectators can follow it.”
+
+## Sprint 4 — Hardening, resets, and launch
+
+Goal: Verify tournament-day readiness and deploy production.
+
+- WP-12: Resets, quality checks, and deployment.
+- Fix integration defects without adding unapproved features.
+- Rehearse a complete 12-team tournament.
+
+### Milestone acceptance
+
+- All four reset types work with authorization and destructive confirmation.
+- Critical E2E flows and business-rule tests pass.
+- Mobile usability, 200% text zoom, labels, contrast, and touch targets are checked.
+- No verified WCAG-conformance claim is made.
+- Agreed performance conditions are tested.
+- Save failures preserve input and do not report false success or permit repeated submissions.
+- Production URL, HTTPS, organizer login, and persistence across ordinary restarts are verified.
+- Public data remains accessible after finalization.
+
+Demo: “The app is deployed and ready for tournament day.”
+
+## Work-package tracker
+
+| ID | Package | Complexity | Dependencies | Status |
+|---|---|---|---|---|
+| WP-01 | Repository, tooling, and environment setup | S | None | Approved; not started |
+| WP-02 | Database schema and migrations | M | WP-01 | Not started; approval required |
+| WP-03 | Organizer authentication and authorization | M | WP-02 | Not started; approval required |
+| WP-04 | Tournament setup: teams, groups, and courts | M | WP-03 | Not started; approval required |
+| WP-05 | Group pairings and stable round-robin order | M | WP-04 | Not started; approval required |
+| WP-06 | Court assignment and public upcoming games | M | WP-05 | Not started; approval required |
+| WP-07 | Group results, validation, and standings | L | WP-06 | Not started; approval required |
+| WP-08 | Tie resolution, stage transitions, and locking | L | WP-07 | Not started; approval required |
+| WP-09 | Knockout bracket, results, and progression | L | WP-08 | Not started; approval required |
+| WP-10 | Third place, forfeits, and placements | M | WP-09 | Not started; approval required |
+| WP-11 | Public pages and automatic updates | M | WP-06; full value after WP-10 | Not started; approval required |
+| WP-12 | Resets, quality checks, and deployment | M | WP-10, WP-11 | Not started; approval required |
+
+## Rehearsal checklist
+
+- [ ] Create 12 teams, groups, and courts.
+- [ ] Complete group matches and verify assignment conflict prevention.
+- [ ] Enter normal results, a 1–1 draw, and a forfeit.
+- [ ] Resolve qualification ties, including lot entry.
+- [ ] Progress through all knockout rounds and verify stage locks.
+- [ ] Test both third-place paths, including equal semifinal differences.
+- [ ] Verify public updates, pause/manual refresh, and stale-data behavior on a real phone.
+- [ ] Test all reset flows in a non-production environment.
+- [ ] Confirm production HTTPS, authorization, and data persistence.
+
+## Tracking cadence
+
+After each package, record completion date, actual effort, tests/manual verification, blockers, and the next approval needed. At each sprint review, compare planned versus actual effort and update target dates explicitly. Sprint membership does not authorize implementation of an unapproved package.
+
+## Next action
+
+Return to a dedicated implementation thread and start WP-01 using its approved Codex prompt. No implementation is initiated by this document.
