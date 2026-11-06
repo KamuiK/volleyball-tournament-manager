@@ -1,18 +1,19 @@
 # Volleyball Tournament Manager
 
-**WIP — Work in progress.**
+**Work in progress.**
 
 A mobile-first web application for managing a mixed volleyball tournament: teams, courts, match assignments, results, standings, and knockout progression.
 
-## Status
-
-This repository is in the early setup phase.
+## Current status
 
 - Phase 1 requirements and MVP scope: approved
 - Phase 2 architecture: approved
 - Phase 3 work-package planning: approved
-- WP-01 — Repository, tooling, and environment setup: approved
-- Implementation: not started
+- WP-01 — Repository, tooling, and environment setup: complete
+- WP-02A — UI/UX design foundation: complete
+- WP-02 — Database schema and migrations: complete
+- WP-03 — Organizer authentication and authorization: next
+- Implementation is in progress
 
 ## Project documentation
 
@@ -28,11 +29,9 @@ This repository is in the early setup phase.
 
 The MVP supports one current amateur mixed-volleyball tournament with 10–12 teams, two groups, manual court assignment, completed-match result entry, standings, knockout progression, and public mobile-first views.
 
-The application is English-only at launch. Public pages are read-only and do not require an account. Organizer mutations, resets, settings, and stage transitions will require server-side authorization.
+The application is English-only at launch. Public pages are read-only and do not require an account. Organizer mutations, resets, settings, and stage transitions require server-side authorization.
 
-## Intended technology
-
-The approved architecture is:
+## Technology
 
 - Next.js App Router
 - TypeScript
@@ -45,11 +44,37 @@ The approved architecture is:
 - Vercel hosting
 - Public GitHub repository
 
-The local foundation, database schema, authentication, and tournament functionality are introduced in later approved work packages.
+## Repository structure
+
+- `app/` — Next.js App Router application
+- `src/` — shared application source code
+- `docs/` — product, architecture, and planning documentation
+- `drizzle/` — database migrations
+- `tests/` — automated tests
+- `.github/` — repository and CI configuration
 
 ## Development
 
-Local setup instructions will be added once the Stage 2 project foundation is created.
+Install dependencies:
+
+```bash
+npm install
+```
+
+Run the development server:
+
+```bash
+npm run dev
+```
+
+Run linting and tests:
+
+```bash
+npm run lint
+npm run test
+```
+
+Database migrations are managed with Drizzle and target Neon PostgreSQL. Environment-specific configuration is stored outside version control.
 
 ## Security
 
