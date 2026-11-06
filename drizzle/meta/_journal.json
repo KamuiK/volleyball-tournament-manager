@@ -1,0 +1,27 @@
+{
+  "version": "7",
+  "dialect": "postgresql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "7",
+      "when": 1793999280004,
+      "tag": "0000_confused_marvel_boy",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1793999946403,
+      "tag": "0001_famous_master_mold",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1794000173985,
+      "tag": "0002_deferred_court_history_fk",
+      "breakpoints": true
+    }
+  ]
+}

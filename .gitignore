@@ -17,7 +17,7 @@ blob-report/
 playwright/.cache/
 
 # Environment
-.env
+*.env
 .env.*
 !.env.example
 
