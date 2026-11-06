@@ -7,6 +7,8 @@ Core public and organizer tasks work at 320 CSS-pixel viewport width with no cli
 
 WP-02A establishes the mobile-first layout, spacing, typography, focus, and responsive-interaction rules. WP-04 through WP-11 apply those rules during implementation. WP-12 verifies the final implementation.
 
+The interface uses a minimal, clean, content-first visual direction with a token-based styling approach. The initial theme is light; the token structure must allow a future palette adjustment or dark theme without redesigning components. Do not implement theme switching or dark mode in the MVP.
+
 ## NFR-02 — Practical accessibility baseline
 - Primary buttons and score-entry controls target at least 44×44 CSS pixels.
 - Other controls meet a 24×24 CSS-pixel target or appropriate spacing exceptions.

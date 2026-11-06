@@ -33,6 +33,7 @@ All decisions below were agreed on 2026-11-05.
 | D-23 | Court queues/simultaneous assignments | One uncompleted match per court and per team |
 | D-24 | Scope approval | Updated full MVP approved at 23:52 CET |
 | D-25 | UI/UX design foundation | Add WP-02A as a documentation-first UI/UX design-foundation package. Scope: design tokens, component and interaction patterns, wireframes/screen specifications, accessibility implementation rules, and screen inventory. Exclusions: no implementation, no new features, no full design system, no localization, no WCAG conformance claim. Dependency: WP-01. Blocks: WP-04 and later UI-heavy packages. Decision date: 2026-11-06. |
+| D-26 | Visual direction, typography, icons, and theming | Minimal, clean, content-first Apple-like mobile-web direction; system font stack; Lucide-style minimal icons rather than SF Symbols; token-based light theme with future palette/dark-mode adaptability; small reusable component inventory. No theme switching, dark mode, localization, or full design system in MVP. Decision date: 2026-11-06. |
 
 ## Open product-scope questions
 None blocking the approved MVP baseline. New requirements require explicit scope review.

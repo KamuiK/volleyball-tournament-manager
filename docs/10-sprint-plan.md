@@ -139,6 +139,7 @@ Demo: “The app is deployed and ready for tournament day.”
 ### WP-02A definition of done
 
 - `docs/11-ui-ux-design-foundation.md` defines design tokens, component and interaction patterns, screen specifications, accessibility implementation rules, and the screen inventory.
+- The document defines the minimal, clean, content-first visual direction, system-font typography approach, non-SF-Symbols iconography approach, token-based light theme, future palette/dark-theme adaptability boundary, and reusable component inventory.
 - Every required screen area is mapped to WP-04 through WP-11.
 - Existing tournament, scoring, tie-breaker, stage-lock, forfeit, placement, reset, and authorization rules remain unchanged.
 - No application code, styles, components, database migrations, or tests are created.

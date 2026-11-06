@@ -84,6 +84,51 @@ Define named, reusable decisions for:
 - Focus-visible styling.
 - Status indication that does not rely on color alone.
 
+### Visual direction
+
+Establish a minimal, clean, content-first visual direction:
+
+- Prioritize clarity, hierarchy, whitespace, and task completion over decoration.
+- Use a restrained color palette with clear semantic roles.
+- Use a familiar, polished mobile-web layout language; do not copy a proprietary operating-system interface.
+- Avoid visual noise, unnecessary illustration, and complex decorative effects.
+
+### Typography and iconography
+
+Use the system font stack as the initial typography approach:
+
+```css
+font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+```
+
+This provides SF Pro-like rendering on Apple devices without adding a webfont dependency. Do not use SF Symbols in the web application because Apple licenses them for Apple-platform software only.
+
+Use one consistent, minimal outline icon set. Lucide is the recommended default because it is lightweight, clean, and permissively licensed. Icons must have accessible names when they convey meaning and must not be the sole indicator of status.
+
+### Adjustable theming
+
+Define visual decisions as named CSS custom properties/design tokens. The initial implementation ships one clean light theme, but token names and structure must make a future palette change or dark theme possible without redesigning components.
+
+Do not implement theme switching, dark mode, or multiple palettes in WP-02A or the MVP.
+
+### Reusable components
+
+Define a small, reusable component inventory rather than a comprehensive design system. The intended base primitives are:
+
+- Button
+- Input and form field
+- Label, helper text, validation message, and error message
+- Card
+- Badge
+- List and table patterns
+- Empty state
+- Loading state
+- Error state
+- Confirmation dialog or destructive-action pattern
+- Page shell and navigation
+
+WP-02A defines the purpose, behavior, accessibility expectations, and visual-token dependencies of these patterns. A later, separately approved package may implement the shared primitives.
+
 ### Component and interaction patterns
 
 Establish lightweight patterns for:

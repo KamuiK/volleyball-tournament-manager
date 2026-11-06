@@ -21,7 +21,9 @@ Provide a mobile-first web application for operating one current amateur mixed-v
 - Rules source: Mixed_Volleyball_Regelblaetter_ueberarbeitet.pdf, supplemented by approved workshop decisions below and in the functional requirements.
 
 ## UI/UX design foundation
-The MVP includes a lightweight, documentation-first UI/UX design foundation to keep organizer and public experiences consistent, mobile-friendly, and accessible. It defines shared design tokens, interaction patterns, screen specifications, and accessibility implementation rules; it does not add product features or implement UI.
+The MVP includes a lightweight, documentation-first UI/UX design foundation to keep organizer and public experiences consistent, minimal, clean, mobile-friendly, and accessible. It defines shared design tokens, reusable component patterns, screen specifications, and accessibility implementation rules.
+
+The visual direction is minimal and content-first, with a clean Apple-like mobile-web feel rather than a copied Apple interface. The app uses the system font stack and a consistent, minimal icon style. Visual styling is token-based so the color palette can be adjusted later without redesigning individual screens. The MVP ships one clean light theme; dark mode, German localization, and a comprehensive design system remain out of scope.
 
 ## Success criteria
 - The organizer can prepare teams, groups, and courts, then explicitly start play.
