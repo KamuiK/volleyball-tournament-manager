@@ -5,7 +5,8 @@
 - Sprint plan approved on 6 November 2026.
 - Phase 3 implementation planning is complete; work-package breakdown approved.
 - Sprint 1 starts on Friday 6 November 2026.
-- WP-01 is approved but implementation has not started.
+- WP-01 is complete.
+- WP-02A is complete as of 6 November 2026.
 - Each subsequent work package requires explicit approval before implementation.
 - Stay on the Free plan for now; reassess only if usage limits interfere.
 - Every handover prompt must begin with a descriptive project, phase, topic, or work-package header.
@@ -122,8 +123,8 @@ Demo: “The app is deployed and ready for tournament day.”
 
 | ID | Package | Complexity | Dependencies | Status |
 |---|---|---|---|---|
-| WP-01 | Repository, tooling, and environment setup | S | None | Approved; not started |
-| WP-02A | UI/UX design foundation | S | WP-01 | Not started; approval required |
+| WP-01 | Repository, tooling, and environment setup | S | None | Complete |
+| WP-02A | UI/UX design foundation | S | WP-01 | Complete; 6 November 2026 |
 | WP-02 | Database schema and migrations | M | WP-01 | Not started; approval required |
 | WP-03 | Organizer authentication and authorization | M | WP-02 | Not started; approval required |
 | WP-04 | Tournament setup: teams, groups, and courts | M | WP-02A, WP-03 | Not started; approval required |
@@ -164,4 +165,4 @@ After each package, record completion date, actual effort, tests/manual verifica
 
 ## Next action
 
-Return to a dedicated implementation thread and start WP-01 using its approved Codex prompt. No implementation is initiated by this document.
+WP-02A is complete. The next approved-candidate packages are WP-02 — Database schema and migrations and WP-03 — Organizer authentication and authorization. Both require explicit approval before implementation.
