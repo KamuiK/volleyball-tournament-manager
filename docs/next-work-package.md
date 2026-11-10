@@ -16,7 +16,7 @@ Read this file first when starting the next work-package thread. It records the 
 - WP-04 — Tournament setup: teams, groups, and courts: next; not started; implementation approval required.
 - WP-05 and later: not started; separate approval required.
 
-The WP-03 completion record and verification limitations are in `docs/10-sprint-plan.md`. This handoff and the WP-03 implementation/completion documentation are local working-tree changes; they are not committed or available on `main` yet. Do not claim otherwise or invent a completion commit SHA.
+WP-03 completion and verification limitations are recorded in `docs/10-sprint-plan.md`. Verify the current branch, commit, working-tree state, and `origin/main` before proceeding; do not assume local changes have been committed or pushed.
 
 ## Workflow and approval gates
 
@@ -102,4 +102,4 @@ After approval, implement only WP-04. Reuse the WP-03 server-side authorization 
 
 ## Starter message for a new conversation
 
-After this handoff is committed and available on `main`, use the GitHub connector to read `docs/next-work-package.md` from `main` in `KamuiK/volleyball-tournament-manager`. Follow its current handoff instructions, inspect the repository state and referenced WP-04 documents, and present the requested plan. Do not edit files or begin implementation until I explicitly approve the plan.
+Use the GitHub connector to read `docs/next-work-package.md` from `main` in `KamuiK/volleyball-tournament-manager`. Follow its current handoff instructions, inspect the repository state and referenced WP-04 documents, and present the requested plan. Do not edit files or begin implementation until I explicitly approve the plan.

@@ -43,7 +43,7 @@ None blocking the approved MVP baseline. New requirements require explicit scope
 |---|---|---|---|
 | P2-01 | Hosting | Evaluate Vercel, Cloudflare, or homelab/Docker against approved needs; domain provider does not dictate host | Open |
 | P2-02 | Stack, storage, ORM, migrations | Small conventional stack; reversible choices; persistent data and history-ready boundaries | Open |
-| P2-03 | Organizer authentication | Evaluate simple secure single-organizer approaches; no public registration required | Open |
+| P2-03 | Organizer authentication | GitHub OAuth through Auth.js v5; GitHub username allowlist via `ORGANIZER_GITHUB_LOGINS`; JWT sessions; exact dependency pin `next-auth@5.0.0-beta.32`; no public registration or user-management interface | Resolved; decision date: 2026-11-10. WP-03 complete; verification results and limitations are recorded in `docs/10-sprint-plan.md`. Production OAuth configuration remains deferred to deployment. |
 | P2-04 | Domain and deployment | Exact hostname, DNS, HTTPS, environments, secrets, maintenance | Open |
 | P2-05 | Verification | Repeatable device/network and spectator-load profile, browsers, unit/integration/E2E tooling | Open |
 | P2-06 | Pairing details | Deterministic round-robin/interleave algorithm, handling unequal round sizes, presentation | Open; preserve approved stable guidance order |

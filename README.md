@@ -12,8 +12,9 @@ A mobile-first web application for managing a mixed volleyball tournament: teams
 - WP-01 — Repository, tooling, and environment setup: complete
 - WP-02A — UI/UX design foundation: complete
 - WP-02 — Database schema and migrations: complete
-- WP-03 — Organizer authentication and authorization: next
-- Implementation is in progress
+- WP-03 — Organizer authentication and authorization: complete; 10 November 2026
+- WP-04 — Tournament setup: teams, groups, and courts: next; not started; separate implementation approval required
+- Application implementation remains in progress; see `docs/10-sprint-plan.md` for verification results and limitations
 
 ## Project documentation
 
