@@ -6,6 +6,7 @@ test("public home remains available without authentication", async ({ page }) =>
   await expect(
     page.getByRole("heading", { level: 1, name: "Volleyball Tournament Manager" }),
   ).toBeVisible();
+  await expect(page.getByRole("button", { name: /add team|add court|start group stage/i })).toHaveCount(0);
 });
 
 test("missing auth configuration rejects organizer access", async ({ page }) => {
@@ -20,6 +21,7 @@ test("configured but anonymous organizer access is sent to login", async ({ page
 
   await expect(page).toHaveURL(/\/login\?callbackUrl=%2Forganizer/);
   await expect(page.getByRole("heading", { name: "Sign in" })).toBeVisible();
+  await expect(page.getByRole("button", { name: "Create tournament" })).toHaveCount(0);
 });
 
 test("login controls are keyboard accessible and show safe feedback", async ({ page }) => {

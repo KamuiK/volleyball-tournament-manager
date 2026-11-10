@@ -9,6 +9,7 @@ const migrationPath = resolve(
   "drizzle/0000_confused_marvel_boy.sql"
 );
 const databaseUrl = process.env.DATABASE_URL;
+const confirmedDevelopmentDatabase = process.env.WP04_CONFIRMED_DEVELOPMENT_DATABASE === "1";
 
 describe("initial database migration", () => {
   it("defines the tournament model and required integrity indexes", async () => {
@@ -83,7 +84,7 @@ describe("initial database migration", () => {
   });
 });
 
-describe.skipIf(!databaseUrl)("Neon development migration", () => {
+describe.skipIf(!databaseUrl || !confirmedDevelopmentDatabase)("Neon development migration", () => {
   it("has applied the initial migration and key database constraints", async () => {
     neonConfig.disableWarningInBrowsers = true;
     const sql = neon(databaseUrl!);
