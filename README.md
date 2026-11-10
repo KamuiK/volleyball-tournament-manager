@@ -67,6 +67,15 @@ Run the development server:
 npm run dev
 ```
 
+### Organizer authentication (local)
+
+1. Create a GitHub OAuth App in GitHub Developer Settings. Set its authorization callback URL to `http://localhost:3000/api/auth/callback/github`.
+2. Copy `enviroments/.env.example` to the ignored `.env.local` file in the repository root.
+3. Set `AUTH_SECRET` to a newly generated value (`openssl rand -base64 32`), set `AUTH_GITHUB_ID` and `AUTH_GITHUB_SECRET` to the OAuth App values, and set `ORGANIZER_GITHUB_LOGINS` to the comma-separated GitHub usernames allowed to organize.
+4. Start the app with `npm run dev`, open `/login`, and complete GitHub sign-in. Verify `/organizer` is available to an allowlisted account and rejected for a non-allowlisted account; verify `/` remains public. Sign out using the control on `/organizer`.
+
+Automated tests use mocked sessions and do not require OAuth credentials. Never put real secrets or personal allowlist values in tracked files. Provider credentials and GitHub callback behavior require a separate manual local check.
+
 Run linting and tests:
 
 ```bash

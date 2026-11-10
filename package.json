@@ -12,7 +12,7 @@
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
     "test:watch": "vitest",
-    "test:e2e": "playwright test",
+    "test:e2e": "playwright test --config=playwright.config.missing-auth.ts --grep=\"missing auth configuration\" && playwright test --config=playwright.config.ts --grep-invert=\"missing auth configuration\"",
     "db:generate": "drizzle-kit generate",
     "db:migrate": "drizzle-kit migrate",
     "db:studio": "drizzle-kit studio"
@@ -21,6 +21,7 @@
     "@neondatabase/serverless": "^1.2.0",
     "drizzle-orm": "^0.45.4",
     "next": "^15.3.0",
+    "next-auth": "5.0.0-beta.32",
     "react": "^19.1.0",
     "react-dom": "^19.1.0"
   },

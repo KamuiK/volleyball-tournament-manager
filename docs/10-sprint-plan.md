@@ -8,6 +8,7 @@
 - WP-01 is complete.
 - WP-02A is complete as of 6 November 2026.
 - WP-02 is complete as of 6 November 2026.
+- WP-03 is complete as of 10 November 2026.
 - Each subsequent work package requires explicit approval before implementation.
 - Stay on the Free plan for now; reassess only if usage limits interfere.
 - Every handover prompt must begin with a descriptive project, phase, topic, or work-package header.
@@ -127,7 +128,7 @@ Demo: “The app is deployed and ready for tournament day.”
 | WP-01 | Repository, tooling, and environment setup | S | None | Complete |
 | WP-02A | UI/UX design foundation | S | WP-01 | Complete; 6 November 2026 |
 | WP-02 | Database schema and migrations | M | WP-01 | Complete; 6 November 2026 |
-| WP-03 | Organizer authentication and authorization | M | WP-02 | Not started; approval required |
+| WP-03 | Organizer authentication and authorization | M | WP-02 | Complete; 10 November 2026 |
 | WP-04 | Tournament setup: teams, groups, and courts | M | WP-02A, WP-03 | Not started; approval required |
 | WP-05 | Group pairings and stable round-robin order | M | WP-04; uses WP-02A patterns | Not started; approval required |
 | WP-06 | Court assignment and public upcoming games | M | WP-05; uses WP-02A patterns | Not started; approval required |
@@ -164,6 +165,21 @@ Completed on 6 November 2026.
 - One active assignment per team remains application-level validation for a later work package; it is intentionally not enforced as a database constraint.
 - No UI, authentication, business rules, scoring calculations, standings, bracket progression, resets, or public-update behavior were implemented.
 
+### WP-03 completion record
+
+Completed on 10 November 2026. The completion record reflects implementation and test-hardening review; it does not include a production deployment.
+
+- Added Auth.js v5 with GitHub OAuth, JWT sessions, `/login`, protected `/organizer`, and a reusable server-only organizer authorization helper. Organizer access requires a matching configured GitHub login; public pages remain anonymous.
+- Pinned the sole added dependency to `next-auth@5.0.0-beta.32`. No schema or migration changes were made.
+- `npm run lint`, `npm run typecheck`, `npm test`, `npm run build`, and `npm run test:e2e` passed; `git diff --check` passed.
+- Unit tests: 42 passed, 2 skipped. The skipped checks are conditional Neon migration tests requiring `DATABASE_URL`; they are unrelated to WP-03 and did not re-verify database migrations in this run.
+- The final build passed in an isolated copy without local environment files. An intermediate build in the checkout reported finding `.env.local`; its contents were not displayed or inspected. Do not infer that all commands ran without local environment files.
+- E2E passed sequentially: missing-auth configuration, 1 test; configured-but-anonymous configuration and remaining coverage, 4 tests. The servers used port 3217 because port 3000 was occupied; existing processes were not stopped. The tests used fake or empty auth configuration, did not submit OAuth sign-in, and did not contact GitHub.
+- Organizer-reported manual checks passed: an allowlisted GitHub account accessed `/organizer`; excluding it through a different valid allowlist value denied access; restoring the allowlist restored access; direct `/organizer` access after sign-out required login; and the public home page remained available while signed out. The login page also passed at 320px width and 200% browser zoom.
+- The requested manual VoiceOver/screen-reader check was not performed at the organizer's request. No WCAG conformance claim is made.
+- Limitations: automated coverage models `auth()` returning `null` at the authorization boundary, not actual JWT expiration; automated sign-out coverage verifies delegation to Auth.js, not browser-cookie deletion; automated E2E does not exercise external GitHub OAuth. Production deployment and production OAuth configuration remain out of scope.
+- Code review found no confirmed authorization bypass. No actual effort estimate or completion commit SHA is recorded.
+
 ## Rehearsal checklist
 
 - [ ] Create 12 teams, groups, and courts.
@@ -182,4 +198,4 @@ After each package, record completion date, actual effort, tests/manual verifica
 
 ## Next action
 
-WP-02 is complete. The next approved-candidate package is WP-03 — Organizer authentication and authorization. It requires explicit approval before planning or implementation.
+WP-01, WP-02A, WP-02, and WP-03 are complete. WP-04 — Tournament setup: teams, groups, and courts — is next and requires separate explicit approval before implementation. See `docs/next-work-package.md` for the WP-04 handoff. No later work package is authorized by this status update.

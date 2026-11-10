@@ -11,7 +11,7 @@ Volleyball Tournament Manager is a mobile-first web application for managing one
 - Use conventional commit messages.
 - Use TypeScript strict mode.
 - Keep public pages read-only and accessible without authentication.
-- Enforce organizer authorization, validation, assignment conflicts, stage locks, and progression rules on the server in later work packages.
+- Reuse WP-03's server-side organizer authorization in protected operations; enforce validation, assignment conflicts, stage locks, and progression rules on the server in their respective work packages.
 - Keep match identity independent of court, display order, and future start times.
 - Design data and interfaces so historical tournaments, German localization, and an optional public timetable can be added later.
 - Never commit secrets, credentials, private configuration, real tournament data, or production logs.
@@ -49,4 +49,4 @@ npm run format
 
 ## Current scope
 
-WP-01 establishes the repository and local foundation only. Database schema, migrations, authentication, tournament setup, scoring, standings, court assignment, knockout progression, public updating, and resets belong to later approved work packages.
+WP-01 repository foundation, WP-02A UI/UX design foundation, WP-02 database schema and migrations, and WP-03 organizer authentication and authorization are complete. WP-04 tournament setup (teams, groups, and courts) is next and requires separate approval before implementation. Pairings, court assignment, scoring, standings, knockout progression, public updating, and resets remain in their later approval-gated work packages.

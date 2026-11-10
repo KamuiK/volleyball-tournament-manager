@@ -1,6 +1,6 @@
 # Project overview and status
 
-Last updated: 6 November 2026
+Last updated: 10 November 2026
 
 ## Project
 
@@ -32,11 +32,13 @@ The application is English-only at launch. Public pages are read-only. Organizer
 | Phase 2 architecture | Approved |
 | Phase 3 work-package planning | Approved |
 | WP-01 repository and local foundation | Complete |
-| WP-02A UI/UX design foundation | Not started; approval required |
-| WP-02 database schema and migrations | Not started; approval required |
-| WP-03 organizer authentication | Not started; approval required |
-| WP-04 tournament setup | Not started; approval required |
+| WP-02A UI/UX design foundation | Complete; 6 November 2026 |
+| WP-02 database schema and migrations | Complete; 6 November 2026 |
+| WP-03 organizer authentication and authorization | Complete; 10 November 2026 |
+| WP-04 tournament setup | Next; not started; approval required |
 | Public deployment | Not started |
+
+WP-03 added GitHub OAuth through Auth.js v5, restricted organizer access to the configured GitHub username allowlist, and used JWT sessions with a reusable server-side authorization helper. Public access remains anonymous. The implementation uses the exact dependency pin `next-auth@5.0.0-beta.32` and did not change the database schema or migrations. Verification details and limitations are recorded in `docs/10-sprint-plan.md`.
 
 ## WP-01 results
 
@@ -97,11 +99,7 @@ The `esbuild` and `fsevents` install scripts were explicitly approved for this p
 
 ## Next work package
 
-WP-02A — UI/UX design foundation is the next approved-candidate package, but it requires explicit approval before implementation.
-
-It is a documentation-only package that establishes design tokens, component and interaction patterns, screen specifications, accessibility implementation rules, and a screen inventory for WP-04 through WP-11. It must not implement UI, add features, select infrastructure, or claim WCAG conformance.
-
-WP-02 — Database schema and migrations follows WP-02A in the approved sequence and also requires explicit approval before implementation. It will introduce the Neon PostgreSQL connection, Drizzle ORM, initial schema, migration tooling, and database-related environment conventions. It must not implement tournament features beyond the approved data foundation.
+WP-04 — Tournament setup: teams, groups, and courts — is next. WP-02A, WP-02, and WP-03 are complete dependencies. WP-04 requires separate explicit approval before implementation and must follow the approved functional requirements and UI/UX design foundation. It covers setup only; group pairings and round-robin ordering belong to WP-05.
 
 ## Repository links
 
